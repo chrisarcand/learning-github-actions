@@ -1,5 +1,8 @@
 name: This is an example
 
+permissions:
+  id-token: write # This is required for requesting the JWT
+
 on: [push]
 
 jobs:
