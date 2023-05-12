@@ -1,17 +1,10 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: Print Token Request URL
+
 on: [push]
+
 jobs:
-  job:
+  print-url:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/github-script@v6
-      id: script
-      timeout-minutes: 10
-      with:
-        debug: true
-        script: |
-          const token = process.env['ACTIONS_RUNTIME_TOKEN']
-          const runtimeUrl = process.env['ACTIONS_ID_TOKEN_REQUEST_URL']
-          core.setOutput('TOKEN', token.trim())
-          core.setOutput('IDTOKENURL', runtimeUrl.trim())
+    - name: Print Token Request URL
+      run: echo "The token request URL is: ${{ env.ACTIONS_ID_TOKEN_REQUEST_URL }}"
