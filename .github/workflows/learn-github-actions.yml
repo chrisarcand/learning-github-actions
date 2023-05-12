@@ -6,5 +6,4 @@ jobs:
   print-url:
     runs-on: ubuntu-latest
     steps:
-    - name: Print Token Request URL
-      run: echo "The token request URL is: ${{ env.ACTIONS_ID_TOKEN_REQUEST_URL }}"
+      - run: echo "The token request URL is: ${{ env.ACTIONS_ID_TOKEN_REQUEST_URL }}"
